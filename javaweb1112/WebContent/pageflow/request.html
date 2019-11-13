@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요청 파일</title>
+<style>
+	#btn:active{
+		padding-left:3px;
+		padding-top:3px;
+		border-left-color:red;
+		border-top-color:red;
+		border-right-color:blue;
+		border-bottom-color:blue;
+		border-width:10px;
+		border-style:solid;
+	}
+	#btn{
+		background-color:silver;
+		border-left-color:blue;
+		border-top-color:blue;
+		border-right-color:red;
+		border-bottom-color:red;
+		border-width:10px;
+		border-style:solid;
+		
+	}
+</style>
+</head>
+<body>
+	<!-- images와 pageflow와 동일한 선상의 디렉토리이기 때문에 부모디렉토리까지 가기위해서 ../를 기입 -->
+	<a href='#'><img src='../images/6.png' width="300" height="300" id="btn"/></a>
+	
+</body>
+<script>
+	document.getElementById('btn').addEventListener('click', function(e){
+		// 요청 전송
+		location.href = 'process.jsp';
+	});
+</script>
+</html>
