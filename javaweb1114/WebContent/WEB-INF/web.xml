@@ -9,6 +9,20 @@
     <welcome-file>default.htm</welcome-file>
      <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <error-page>
+  <!--  404오류가 발생하면 
+  error/errordisp.jsp파일이 출력되도록 설정  -->
+	<error-code>404</error-code>
+	<location>/error/errordisp.jsp</location>
+  </error-page> 
+
+  <!-- 초기화 파라미터  -->
+  <context-param>
+  	<param-name>java</param-name>
+  	<param-value>oracle</param-value>
+  </context-param>
+  
   <session-config>
 	<session-timeout>1</session-timeout>
   </session-config>

@@ -14,10 +14,19 @@
     <%
     String msg = "";
     //로그인에 실패해서 온 것인지 아니면 바로 온것인지 판단 
-    if(session.getAttribute("login")!= null){
+    if(session.getAttribute("login")!= null
+    && session.getAttribute("login").equals("fail")){
     	msg = "없는 아이디이거나 비밀번호가 틀렸습니다.";
     	session.setAttribute("login", null);
-    }
+    }else if(session.getAttribute("login")!=null
+    && session.getAttribute("login").equals("authentication")){
+    	msg = "로그인을 하셔야 접근할 수 있는 페이지 입니다.";
+    	session.setAttribute("login", null);
+    }else if(session.getAttribute("login")!=null
+    && session.getAttribute("login").equals("authorizationn")){
+    	msg = "관리자만 접근할 수 있는 페이지 입니다.";
+    	session.setAttribute("login", null);
+    }	
     %>
     <%=msg %>
     </div>

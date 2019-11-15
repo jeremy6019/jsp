@@ -11,20 +11,28 @@
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	
+	//이전 페이지 주소를 찾아오기 
+	String url = 
+			(String)session.getAttribute("url");
+	//url이 없을 때는 메인 페이지로 이동하도록 ./를 저장 
+	if(url == null){
+		url = "./";
+	}
+	
 	if("root".equals(id) && "1234".equals(pw)){
 		//세션에 데이터 저장 
 		session.setAttribute("id", "root");
 		session.setAttribute("nick", "관리자");
 		session.setAttribute("level", "admin");
 		//메인 페이지로 이동 
-		response.sendRedirect("./");
+		response.sendRedirect(url);
 	}else if("user".equals(id) && "1234".equals(pw)){
 		//세션에 데이터 저장 
 		session.setAttribute("id", "user");
 		session.setAttribute("nick", "유저");
 		session.setAttribute("level", "user");
 		//메인 페이지로 이동 
-		response.sendRedirect("./");
+		response.sendRedirect(url);
 	} else {
 		//세션에 데이터 삭제 
 		session.setAttribute("id", null);

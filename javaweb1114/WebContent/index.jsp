@@ -18,7 +18,7 @@
 %>
 	
 	<a href='authentication.jsp'>인증</a><br/>
-	<a href='authorization.jsp'></a>인가<br/>
+	<a href='authorization.jsp'>인가</a><br/>
 	
 </body>
 </html>
